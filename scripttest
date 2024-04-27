@@ -1,0 +1,38 @@
+#!/bin/bash
+
+
+current_date=$(date '%Y/%m/%d')
+
+script_log="$current_date/script.log"
+error_log="$current_date/error.log"
+touch "$script_log" "$error_log"
+
+
+echo "Script started at $(date)" > "$script_log"
+
+result_file="$current_date/result-$(date +'%H-%M-%S').txt"
+
+
+echo "Script started at $(date)" > "$result_file"
+
+
+
+directories=$(echo $PATH| sed 's/ /_/g'| sed 's/:/ /g' )
+
+for i in $directories
+
+
+do
+        if [[ -d $i ]]
+        then
+                echo $i
+                ls $i | wc -w
+        else
+                echo "$i not exist"
+        fi
+
+done
+
+	echo "Script finished at $(date)" >> "$script_log"
+
+
