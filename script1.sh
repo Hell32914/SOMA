@@ -57,8 +57,8 @@ echo "Script finished at $(date)" >> "$result_file"
 # Записуємо час завершення скрипта в файл script.log
 echo "Script finished at $(date)" >> "$script_log"
 
+#В .bashrc добавив команду bash /home/dnscxrbl/work/script/SOMA щоб скріпт автоматично запускався під час запуску терміналу
 
-
-
+#В crontab -e добавив 5 * * * * /home/dnscxrbl/work/script/SOMA/script1.sh щоб скріпт спрацьовув кожну 5 хвилину
 
 
