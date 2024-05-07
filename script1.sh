@@ -61,4 +61,8 @@ echo "Script finished at $(date)" >> "$script_log"
 
 #В crontab -e добавив 5 * * * * /home/dnscxrbl/work/script/SOMA/script1.sh щоб скріпт спрацьовув кожну 5 хвилину
 
+#Знаходимо файли у папці 2024 з розширенням .txt, далі вираховуємо які з них старші 3х днів, далі запускаємо цикл,який буде видаляти розширення .txt і архівувати ці файли з їх назвою  
+
+find /home/dnscxrbl/2024 -type f -name "*.txt" -ctime +3 -exec sh -c 'for file; do tar -czvf "${file%.txt}.tar.gz" "$file"; done' _ {} +
+
 
