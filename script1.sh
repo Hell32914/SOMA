@@ -65,4 +65,4 @@ echo "Script finished at $(date)" >> "$script_log"
 
 find /home/dnscxrbl/2024 -type f -name "*.txt" -ctime +3 -exec sh -c 'for file; do tar -czvf "${file%.txt}.tar.gz" "$file"; done' _ {} +
 
-
+# new line for merge request
